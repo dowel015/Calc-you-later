@@ -1,0 +1,45 @@
+body {
+    background-color: antiquewhite;
+}
+
+.calc {
+    display:flex;
+    flex-direction: column;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom {
+    display: flex;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+}
+
+.rowOne{
+    display: flex;
+}
+
+.rowTwo{
+    display: flex;
+}
+
+.rowThree{
+    display: flex;
+}
+
+.rowFour{
+    display: flex;
+}
+
+.rowFive{
+    display: flex;
+}
+
+
+
