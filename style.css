@@ -5,41 +5,92 @@ body {
 .calc {
     display:flex;
     flex-direction: column;
+    border: solid 2px;
+    background-color: rgb(235, 233, 233);
+    border-radius: 4px;
+    gap: 4px;
+    padding: 16px;
+}
+
+.container {
+    display:flex;
+    flex-direction: column;
+    border: solid 1px;
+    background-color: rgb(235, 233, 233);
+    border-radius: 4px;
+    gap: 4px;
+}
+
+.display {
+    background-color: black;
+    color: white;
+    padding: 4px;
+    text-align: end;
 }
 
 .buttons {
     display: flex;
     flex-direction: column;
+    gap: 4px;
+    padding: 4px;
 }
 
 .bottom {
     display: flex;
+    gap: 4px;
 }
 
 .left {
     display: flex;
     flex-direction: column;
+    gap: 4px;
+}
+
+.right {
+    align-items: stretch;
+    display: flex;
 }
 
 .rowOne{
     display: flex;
+    gap: 4px;
 }
 
 .rowTwo{
     display: flex;
+    gap: 4px;
 }
 
 .rowThree{
     display: flex;
+    gap: 4px;
 }
 
 .rowFour{
     display: flex;
+    gap: 4px;
 }
 
 .rowFive{
     display: flex;
+    gap: 4px;
 }
 
+.nums {
+    background-color: rgb(235, 233, 233);
+}
 
+.operator {
+    background-color: rgb(235, 233, 233);
+    color:blue;
+}
 
+.clear {
+    background-color: red;
+    color: white;
+}
+
+.equal {
+    background-color: blue;
+    color: white;
+}
