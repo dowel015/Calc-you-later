@@ -28,11 +28,23 @@ function operate(a,b,c) {
         return divide(b,c);
     }
 }
-let a=5, b=10;
 
-let c = operate("+",a,b);
-let d = operate("-",a,b);
-let e = operate("*",a,b);
-let f = operate("/",a,b);
+function someFun(e) {
+    if(e.target.textContent == "C") {
+        clear();
+    } else if(e.target.class == "operator") {
+        
+    } else {
+        display = display + e.target.textContent;
+        document.getElementById("display").textContent = display;
+    }
+}
 
-console.log(a,b,c,d,e,f);
+function clear() {
+    document.getElementById("display").textContent = "0";
+    display = "";
+}
+
+let display = "";
+const input = Array.from(document.querySelectorAll("button"));
+input.forEach(button => button.addEventListener("click", someFun));
