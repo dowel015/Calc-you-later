@@ -15,22 +15,26 @@ function divide(a,b) {
 }
 
 function operate(a,b,c) {
+    let answer;
     if(a=="+") {
-        return add(b,c);
+        answer = add(b,c);
     }
     if(a=="-") {
-        return subtract(b,c);
+        answer = subtract(b,c);
     }
     if(a=="X") {
-        return multiply(b,c);
+        answer = multiply(b,c);
     }
     if(a=="%") {
-        return divide(b,c);
+        answer = divide(b,c);
     }
+    answer = answer * 100;
+    answer = Math.round(answer);
+    answer = answer / 100;
+    return answer;
 }
 
 function someFun(e) {
-    console.log(e.target.className)
     if(e.target.textContent == "C") {
         clear();
     } else if(e.target.className == "operator") {
@@ -38,6 +42,7 @@ function someFun(e) {
             num1 = display;
             operator = e.target.textContent;
             clearDisplay();
+            decimal = 0;
         } else {
             num2 = display;
             display = operate(operator, Number(num1), Number(num2));
@@ -46,6 +51,7 @@ function someFun(e) {
             num2 = 0;
             operator = e.target.textContent;
             clearDisplay();
+            decimal = 0;
         }
     } else if(e.target.className == "equal") {
         if(operator == 0) {
@@ -56,7 +62,14 @@ function someFun(e) {
             num1 = display;
             num2 = 0;
             operator = 0;
+            decimal = 0;
         }
+    } else if(e.target.textContent == ".") {
+        if(decimal == 0) {
+            decimal += 1;
+            display = display + e.target.textContent;
+            document.getElementById("display").textContent = display;
+        } 
     } else {
         display = display + e.target.textContent;
         document.getElementById("display").textContent = display;
@@ -69,6 +82,7 @@ function clear() {
     num2 = 0;
     operator = 0;
     document.getElementById("display").textContent = "0";
+    decimal = 0;
 }
 
 function clearDisplay() {
@@ -78,5 +92,6 @@ function clearDisplay() {
 let display = "";
 let num1, num2; 
 let operator = 0;
+let decimal = 0;
 const input = Array.from(document.querySelectorAll("button"));
 input.forEach(button => button.addEventListener("click", someFun));
